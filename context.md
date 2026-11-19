@@ -1,0 +1,1 @@
+gardes toujours les mêmes typographies, couleurs et structure. Tout doit être cohérent et pertinent 

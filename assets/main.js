@@ -8,12 +8,10 @@ var mb=d.querySelector('.mb'),mn=d.getElementById('mn');
 if(mb&&mn){mb.addEventListener('click',function(){var o=mn.classList.toggle('open');mb.setAttribute('aria-expanded',o)})}
 /* Accueil : écran de chargement (une fois par session), titre, étoiles */
 if(b.classList.contains('home')){
-  var ld=d.getElementById('ld'),seen=false;
-  try{seen=sessionStorage.getItem('fisme-ld')==='1'}catch(e){}
-  if(ld&&!R&&!seen){
+  var ld=d.getElementById('ld');
+  if(ld&&!R){
     ld.hidden=false;
-    setTimeout(function(){ld.style.opacity=0;go();setTimeout(function(){ld.hidden=true},500)},1700);
-    try{sessionStorage.setItem('fisme-ld','1')}catch(e){}
+    setTimeout(function(){ld.style.opacity=0;go();setTimeout(function(){ld.hidden=true},350)},1000);
   }else{if(ld)ld.hidden=true;go()}
   setTimeout(go,3500);
   var st=d.getElementById('st'),hero=d.querySelector('.hero');

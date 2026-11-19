@@ -49,7 +49,6 @@ Le site envoie les e-mails avec le service Resend (offre gratuite pour démarrer
 3. Crée une clé API.
 4. Cloudflare → ton projet Pages → Settings → Variables and secrets, ajoute :
    - `RESEND_API_KEY` : ta clé (type Secret) — obligatoire
-   - `TO_EMAIL` : `contact@fisme-studio.com` (déjà la valeur par défaut)
    - `FROM_EMAIL` : `FISME STUDIO <contact@fisme-studio.com>` (valeur par défaut, doit utiliser le domaine vérifié)
 5. Redéploie le site pour que les variables soient prises en compte.
 

@@ -1,8 +1,9 @@
 // Cloudflare Pages Function : POST /api/send
 // Reçoit les formulaires FirstLook et Devis, envoie un e-mail via Resend.
-// Variables à définir dans Cloudflare (voir LISEZ-MOI.md) : RESEND_API_KEY (obligatoire), TO_EMAIL, FROM_EMAIL (optionnelles).
+// Variables à définir dans Cloudflare (voir LISEZ-MOI.md) : RESEND_API_KEY (obligatoire), FROM_EMAIL (optionnelle).
 const LABELS={nom:'Prénom et nom',email:'E-mail',projet:'Projet',entreprise:'Entreprise',site:'Site web',service:'Service',precision:'Précision (sur mesure)',infos:'Informations complémentaires'};
 const NAMES={creation:'Création',refonte:'Refonte','sur-mesure':'Sur mesure'};
+const RECIPIENT='contact@fisme-studio.com';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const json=(status,body)=>new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store'}});
 
@@ -34,7 +35,7 @@ export async function onRequestPost({request,env}){
     headers:{'Authorization':'Bearer '+env.RESEND_API_KEY,'Content-Type':'application/json'},
     body:JSON.stringify({
       from:env.FROM_EMAIL||'FISME STUDIO <contact@fisme-studio.com>',
-      to:[env.TO_EMAIL||'contact@fisme-studio.com'],
+      to:[RECIPIENT],
       reply_to:v.email,subject,html,text
     })
   });

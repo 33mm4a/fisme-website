@@ -1,6 +1,5 @@
 /* FISME STUDIO — styles partagés. Couleurs et tailles : variables ci-dessous. */
-:root{--bg:#F5F3EA;--fg:#121212;--ac:#EEE83A;--ink:#121212;--mut:#55554F;--card:#ECE9DD;--line:#121212;--pad:clamp(20px,2.7vw,38px);box-sizing:border-box}
-@media (prefers-color-scheme:dark){:root{--bg:#121212;--fg:#F5F3EA;--mut:#B8B8B0;--card:#1D1D1D;--line:#F5F3EA}}
+:root{--bg:#121212;--fg:#F5F3EA;--ac:#EEE83A;--ink:#F5F3EA;--mut:#B8B8B0;--card:#1D1D1D;--line:#F5F3EA;--pad:clamp(20px,2.7vw,38px);box-sizing:border-box}
 html{scroll-behavior:smooth}
 *,*::before,*::after{box-sizing:inherit}
 [hidden]{display:none!important}
@@ -25,6 +24,8 @@ nav a.btn.on{color:#121212}
 .mb{display:none;background:#EEE83A;color:#121212;border:0;border-radius:999px;font:700 17px 'DM Sans',sans-serif;padding:10px 24px;cursor:pointer}
 .btn{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:#EEE83A;border:2px solid var(--ink);border-radius:999px;padding:0 24px;height:42px;font:700 15px 'DM Sans',sans-serif;text-decoration:none;text-transform:uppercase;letter-spacing:.5px;transition:transform .2s;cursor:pointer}
 .btn:hover{transform:translateY(-2px) rotate(-1deg)}
+.btn.y{background:#EEE83A;color:#121212;border-color:#121212}
+.btn.k{background:#121212;color:#EEE83A;border-color:#121212}
 .btn.o{background:transparent;color:inherit;border-color:currentColor}
 .hero .btn,.ph .btn{background:#EEE83A;color:#121212;border-color:#EEE83A}
 .hero .btn.o,.ph .btn.o{background:transparent;color:#EEE83A}
@@ -57,7 +58,8 @@ h2{font-size:clamp(40px,6vw,84px);margin-bottom:36px;max-width:1100px}
 .card{background:var(--card);border:2px solid var(--line);border-radius:24px;padding:30px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;transition:background .25s,color .25s,border-color .25s}
 .alt .card{background:var(--bg)}
 .card.f,.alt .card.f{background:var(--ac);color:#121212;border-color:var(--ac)}
-.card.f:hover,.alt .card.f:hover,.pcard:hover{background:#fff;color:#121212;border-color:#121212}
+.card.f:hover,.alt .card.f:hover{background:#EEE83A;color:#121212;border-color:#EEE83A}.pcard:hover{background:var(--bg);color:var(--fg);border-color:var(--line)}
+#studio .card{transition:transform .3s,background .3s,color .3s,border-color .3s}#studio .card:hover,#studio .card:focus-within{background:#F5F3EA;color:#121212;border-color:#121212;transform:translateY(-5px) rotate(-1deg)}
 .card h3{font-size:34px}
 .card p,.card ul{margin:0}
 .card ul{padding-left:20px}
@@ -72,12 +74,12 @@ h2{font-size:clamp(40px,6vw,84px);margin-bottom:36px;max-width:1100px}
 .tag{align-self:flex-start;border:2px solid currentColor;border-radius:999px;padding:3px 14px;font-weight:700;font-size:15px}
 .fl{display:grid;grid-template-columns:1fr 1.25fr;gap:56px;align-items:center}
 .pages{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.pg{border-radius:18px;padding:22px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between;gap:14px;border:2px solid #121212;transition:transform .3s}
+.pg{border-radius:18px;padding:22px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between;gap:14px;border:2px solid var(--line);transition:transform .3s}
 .pg:nth-child(odd){transform:rotate(-1.5deg)}.pg:nth-child(even){transform:rotate(1.5deg)}
 .pg:hover{transform:rotate(0) translateY(-4px)}
 .pg h3{font-size:30px}.pg p{margin:0;font-size:16px;line-height:1.4}
 .pg.k{background:#121212;color:#F5F3EA;border-color:#121212}.pg.k h3{color:#EEE83A}
-.pg.y{background:#EEE83A;color:#121212}.pg.w{background:#fff;color:#121212}
+.pg.y{background:#EEE83A;color:#121212}.pg.w{background:var(--card);color:var(--fg)}
 .pg img{width:64px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .sv{padding:80px 0;border-bottom:2px solid var(--line)}
@@ -119,7 +121,7 @@ footer .lg{height:40px;color:var(--fg)}
 footer ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 24px}
 footer a{text-decoration:none}footer a:hover{text-decoration:underline}
 #ld{position:fixed;inset:0;z-index:99;background:#EEE83A;display:flex;align-items:center;justify-content:center;transition:opacity .5s}
-#ld .lg{height:auto;width:min(72vw,560px);color:#121212}
+#ld .lg{height:auto;width:min(48vw,380px);color:#121212}
 #ld .pt{animation:ldsp 1.3s ease-in-out}
 @keyframes ldsp{0%{transform:scale(0) rotate(-180deg)}60%{transform:scale(1.6) rotate(180deg)}100%{transform:scale(1) rotate(360deg)}}
 .js .home .ln>span{display:block;transform:translateY(115%);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
