@@ -6,7 +6,7 @@ function go(){b.classList.add('go')}
 /* Menu mobile */
 var mb=d.querySelector('.mb'),mn=d.getElementById('mn');
 if(mb&&mn){mb.addEventListener('click',function(){var o=mn.classList.toggle('open');mb.setAttribute('aria-expanded',o)})}
-/* Accueil : écran de chargement (une fois par session), titre, étoiles */
+/* Accueil : écran de chargement, titre, étoiles */
 if(b.classList.contains('home')){
   var ld=d.getElementById('ld');
   if(ld&&!R){

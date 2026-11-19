@@ -122,8 +122,10 @@ footer ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px
 footer a{text-decoration:none}footer a:hover{text-decoration:underline}
 #ld{position:fixed;inset:0;z-index:99;background:#EEE83A;display:flex;align-items:center;justify-content:center;transition:opacity .5s}
 #ld .lg{height:auto;width:min(48vw,380px);color:#121212}
-#ld .pt{animation:ldsp 1.3s ease-in-out}
-@keyframes ldsp{0%{transform:scale(0) rotate(-180deg)}60%{transform:scale(1.6) rotate(180deg)}100%{transform:scale(1) rotate(360deg)}}
+#ld .pt{transform-box:fill-box;transform-origin:center;animation:ldstar 1s ease-in-out}
+#ld .ld-dot{opacity:0;transform-box:fill-box;transform-origin:center;animation:lddot 1s ease-in-out}
+@keyframes ldstar{0%,42%,100%{opacity:1;transform:scale(1) rotate(0)}50%,92%{opacity:0;transform:scale(.55) rotate(90deg)}}
+@keyframes lddot{0%,42%,100%{opacity:0;transform:scale(.55)}50%,92%{opacity:1;transform:scale(1)}}
 .js .home .ln>span{display:block;transform:translateY(115%);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
 .js body.go .ln>span{transform:none}
 .ln:nth-child(2)>span{transition-delay:.12s}.ln:nth-child(3)>span{transition-delay:.24s}
